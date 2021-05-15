@@ -52,4 +52,3 @@ def signout(request):
     auth.logout(request)
     # request.user.is_authenticated = False
     return redirect(signin)
-
