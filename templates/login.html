@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-6 col-sm-6 col-md-5 col-lg-4 mx-auto">
             <h3>Sign in</h3>
-            <form action="" method="POST">
+            <form action="{% url 'signin' %}" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
                     <input type="email" class="form-control" name="email" placeholder="Email" id="">

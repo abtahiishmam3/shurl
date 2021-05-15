@@ -1,7 +1,9 @@
 {% extends 'nav.html' %}
 
-{% block content %}
+{% load static %}
 
+{% block content %}
+<img src="{% static 'shurl/logo.svg' %}" alt="My image">
 <div class="container-fluid">
     <div class="row">
         <div class="col-6 col-sm-6 col-md-5 col-lg-4 mx-auto">
@@ -14,7 +16,7 @@
                 </button>
               </div>
             {% endif %}
-            <form action="{% signup %}" method="POST">
+            <form action="{% url 'signup' %}" method="POST">
                 {% csrf_token  %}
                 <div class="form-group">
                     <input type="text" class="form-control" name="username" placeholder="Username" id="">
@@ -31,7 +33,7 @@
                 <div class="form-group">
                     <input type="submit" class="btn btn-outline-success px-4" value="Sign up">
                 </div>
-                <a class="card-link" href="{% siginin %}">Already Registered ? Sign in</a>
+                <a class="card-link" href="{% url 'signin' %}">Already Registered ? Sign in</a>
             </form>
         </div>
     </div>

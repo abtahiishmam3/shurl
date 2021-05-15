@@ -13,8 +13,6 @@
   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script> -->
   <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
-  <!-- <link rel="icon" type="image/png" href="/Logo.png"/> -->
-  <link rel="icon" type="image/png" href="https://example.com/favicon.png"/>
   <title>Shurl-Url Shortner</title>
   <style>
     body {
@@ -26,19 +24,10 @@
 </head>
 
 <body>
-  {% if error %}
-  <div class="container p-4">
-    <div class="alert alert-danger alert-dismissable fade show" role="alert">
-      {{ error }}
-      <button type="button" class='close' data-dismiss='alert' area-label='Close'>
-        <span aria-hidden='true'>X</span>
-      </button>
-    </div>
-    {% endif %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mg-auto">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand mx-auto" href="{% url 'home' %}"> <img src="{% static 'shurl/images/iPhone6.png' %}" alt="D2"> Shurl</a>
+          <a class="navbar-brand mx-auto" href="{% url 'home' %}">D2 Shurl</a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
           aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,14 +43,14 @@
               <a class="nav-link" href="{% url 'dashboard' %}">Dashboard</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'signout' %}">SignOut</a>
+              <a class="nav-link" href="{% url 'signout' %}">Sign Out</a>
             </li>
             {% else %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'signin' %}">SignIn</a>
+              <a class="nav-link" href="{% url 'signin' %}">Sign In</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'signup' %}">SignUp</a>
+              <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
             </li>
             {% endif %}
           </ul>
