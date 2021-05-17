@@ -15,12 +15,13 @@ def home(request, query=None):
         return render(request, 'home.html', {})
     else:
         print(f'This was the query {query}')
-        check = ShortUrl.objects.get(short_query=query)
-        if check:
-            check.visits = F('visits') + 1
-            check.save()
-            return redirect(check.original_url)
-        else:
+        try:
+            check = ShortUrl.objects.get(short_query=query)
+            if check:
+                check.visits = F('visits') + 1
+                check.save()
+                return redirect(check.original_url)
+        except ShortUrl.DoesNotExist:
             return render(request, 'home.html', {'error': 'Page does not exist'})
 
 
